@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/functional8m" />
+        <option name="gradleHome" value="C:/gradle/gradle-5.1.1" />
+        <option name="gradleJvm" value="12" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/functional8m" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/functional8p" />
+        <option name="gradleHome" value="C:/gradle/gradle-5.1.1" />
+        <option name="gradleJvm" value="12" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/functional8p" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/mathesis" />
+        <option name="gradleHome" value="C:/gradle/gradle-5.1.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/mathesis" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/objective7p" />
+        <option name="gradleHome" value="C:/gradle/gradle-5.1.1" />
+        <option name="gradleJvm" value="12" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/objective7p" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/reactive8mr" />
+        <option name="gradleHome" value="C:/gradle/gradle-5.1.1" />
+        <option name="gradleJvm" value="12" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/reactive8mr" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/reactive8pr" />
+        <option name="gradleHome" value="C:/gradle/gradle-5.1.1" />
+        <option name="gradleJvm" value="12" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/reactive8pr" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
