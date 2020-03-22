@@ -24,6 +24,7 @@ public class Reactive8prApplication {
     public static void main(String[] args) {
         SpringApplication.run(Reactive8prApplication.class, args);
         System.out.println("Finiszhed");
+        System.out.println("Finiszhed");
     }
 
     @GetMapping("/a")
