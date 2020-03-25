@@ -6,8 +6,8 @@ plugins {
 
 group = 'pl.bihuniak'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 configurations {
     compileOnly {
@@ -32,11 +32,4 @@ dependencies {
 
 test {
     useJUnitPlatform()
-}
-
-bootRun {
-//    systemProperty "spring.profiles.active", "local"
-    if(JavaVersion.current() != JavaVersion.VERSION_1_7){
-        throw new GradleException("This build must be run with java 7 not" + JavaVersion.current())
-    }
 }
