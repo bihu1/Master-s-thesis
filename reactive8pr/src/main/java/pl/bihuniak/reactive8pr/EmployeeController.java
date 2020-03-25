@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.time.LocalDate;
+
 @RestController
 @RequiredArgsConstructor
 public class EmployeeController {
@@ -32,5 +34,14 @@ public class EmployeeController {
     public Mono<Void> deleteEmployeeById(@PathVariable Integer employeeId){
         return Mono.just(employeeId)
             .flatMap(employeeRepository::deleteById);
+    }
+
+    @GetMapping("/employees/test")
+    public Flux<EmployeeSummary> getAdultsMenFromWroclawDetails(@RequestParam String city){
+        return employeeRepository.findAll()
+            .filter(e -> e.getGender().equals(Gender.MALE) &&
+                e.getBirthDay().isBefore(LocalDate.now().minusYears(18)) &&
+                e.getCity().equalsIgnoreCase(city))
+            .map(EmployeeSummary::new);
     }
 }

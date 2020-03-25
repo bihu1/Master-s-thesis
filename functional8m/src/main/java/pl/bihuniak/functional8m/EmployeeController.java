@@ -3,7 +3,11 @@ package pl.bihuniak.functional8m;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
+
+import static java.util.stream.Collectors.toList;
 
 @RestController
 @RequiredArgsConstructor
@@ -29,5 +33,15 @@ public class EmployeeController {
     @DeleteMapping("/employees/{employeeId}")
     public void deleteEmployeeById(@PathVariable Integer employeeId){
         employeeRepository.deleteById(employeeId);
+    }
+
+    @GetMapping("/employees/test")
+    public List<EmployeeSummary> getAdultsMenFromWroclawDetails(@RequestParam String city){
+        return employeeRepository.findAll().stream()
+            .filter(e -> e.getGender().equals(Gender.MALE))
+            .filter(e -> e.getBirthDay().isBefore(LocalDate.now().minusYears(18)))
+            .filter(e -> e.getAddress().getCity().equalsIgnoreCase(city))
+            .map(EmployeeSummary::new)
+            .collect(toList());
     }
 }
