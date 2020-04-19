@@ -1,11 +1,14 @@
 package pl.bihuniak.objective8p.employee;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.web.bind.annotation.*;
-import pl.bihuniak.objective8p.employee.salary.*;
 
 import java.time.LocalDate;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
@@ -25,13 +28,20 @@ public class EmployeeController {
     }
 
     @PostMapping("/employees")
-    public Employee saveOrUpdateEmployee(Employee employee){
+    public Employee saveOrUpdateEmployee(@RequestBody Employee employee){
         return employeeRepository.save(employee);
     }
 
     @DeleteMapping("/employees/{employeeId}")
     public void deleteEmployeeById(@PathVariable Integer employeeId){
-        employeeRepository.deleteById(employeeId);
+        try {
+            employeeRepository.deleteById(employeeId);
+        }catch (EmptyResultDataAccessException ignored){}
+    }
+
+    @DeleteMapping("/employees")
+    public void deleteAll(){
+        employeeRepository.deleteAll();
     }
 
     @GetMapping("/employees/men/adults")

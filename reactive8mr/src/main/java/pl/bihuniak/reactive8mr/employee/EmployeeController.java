@@ -19,7 +19,7 @@ public class EmployeeController {
     private final Map<String, String> codeToDistrict;
 
     @GetMapping("/employees/{employeeId}")
-    public Mono<Employee> findEmployeeById(@PathVariable Integer employeeId){
+    public Mono<Employee> findEmployeeById(@PathVariable String employeeId){
         return Mono.just(employeeId)
             .flatMap(employeeRepository::findById);
     }
@@ -36,9 +36,14 @@ public class EmployeeController {
     }
 
     @DeleteMapping("/employees/{employeeId}")
-    public Mono<Void> deleteEmployeeById(@PathVariable Integer employeeId){
+    public Mono<Void> deleteEmployeeById(@PathVariable String employeeId){
         return Mono.just(employeeId)
             .flatMap(employeeRepository::deleteById);
+    }
+
+    @DeleteMapping("/employees")
+    public Mono<Void> deleteAll(){
+        return employeeRepository.deleteAll();
     }
 
     @GetMapping("/employees/test")
@@ -63,7 +68,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/employees/{employeeId}/district")
-    public Mono<String> getEmployeeCityDistrict(@PathVariable Integer employeeId){
+    public Mono<String> getEmployeeCityDistrict(@PathVariable String employeeId){
         return employeeRepository.findById(employeeId)
             .map(Employee::getAddress)
             .filter(x -> x.getCity().equals("New York City"))

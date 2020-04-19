@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Document("employees")
 public class Employee {
     @Id
-    private Integer id;
+    private String id;
     private String firstName;
     private String lastName;
     private LocalDate birthDay;

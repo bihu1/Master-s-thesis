@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Map;
 
 import static java.util.stream.Collectors.*;
-import static java.util.stream.Collectors.toList;
 
 @RestController
 @RequiredArgsConstructor
@@ -39,6 +38,11 @@ public class EmployeeController {
     public Mono<Void> deleteEmployeeById(@PathVariable Integer employeeId){
         return Mono.just(employeeId)
             .flatMap(employeeRepository::deleteById);
+    }
+
+    @DeleteMapping("/employees")
+    public Mono<Void> deleteAll(){
+        return employeeRepository.deleteAll();
     }
 
     @GetMapping("/employees/test")

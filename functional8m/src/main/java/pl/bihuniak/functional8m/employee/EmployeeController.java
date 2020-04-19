@@ -17,7 +17,7 @@ public class EmployeeController {
     private final EmployeeRepository employeeRepository;
 
     @GetMapping("/employees/{employeeId}")
-    public Optional<Employee> findEmployeeById(@PathVariable Integer employeeId){
+    public Optional<Employee> findEmployeeById(@PathVariable String employeeId){
         return employeeRepository.findById(employeeId);
     }
 
@@ -27,13 +27,18 @@ public class EmployeeController {
     }
 
     @PostMapping("/employees")
-    public Employee saveOrUpdateEmployee(Employee employee){
+    public Employee saveOrUpdateEmployee(@RequestBody Employee employee){
         return employeeRepository.save(employee);
     }
 
     @DeleteMapping("/employees/{employeeId}")
-    public void deleteEmployeeById(@PathVariable Integer employeeId){
+    public void deleteEmployeeById(@PathVariable String employeeId){
         employeeRepository.deleteById(employeeId);
+    }
+
+    @DeleteMapping("/employees")
+    public void deleteAll(){
+        employeeRepository.deleteAll();
     }
 
     @GetMapping("/employees/test")

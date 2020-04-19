@@ -3,9 +3,9 @@ package pl.bihuniak.objective8p.visit;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import java.time.LocalDate;
 import java.util.List;
