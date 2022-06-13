@@ -1,1 +1,1 @@
-# MAThesis
+# Master’s thesis
